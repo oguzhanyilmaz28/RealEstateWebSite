@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import IlanListeGrid from '../components/RealEstateGrid';
 import { useLanguage } from '../contexts/LanguageContext';
-import { HiHome, HiPhone,  HiMail, HiLocationMarker, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import {HiPhone,  HiMail, HiLocationMarker} from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 
 interface Ilan {
@@ -67,8 +67,8 @@ const Sale = () => {
 
   useEffect(() => {
     const fetchSatilik = async () => {
-      try {
-        const res = await fetch('http://localhost:5000/api/ilanlar?tip=Satılık');
+      try {              
+        const res = await fetch(`${import.meta.env.VITE_API_URL}api/ilanlar?tip=Satılık`);
         if (!res.ok) {
           throw new Error(t.errorMessage);
         }

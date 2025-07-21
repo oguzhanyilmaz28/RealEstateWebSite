@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
 import { useState, useRef, useEffect } from "react";
-import { HiMenu, HiX, HiGlobe, HiChevronDown } from "react-icons/hi";
+import { HiMenu, HiX } from "react-icons/hi";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Navbar = () => {

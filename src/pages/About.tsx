@@ -1,7 +1,6 @@
-import { HiUsers, HiTrendingUp, HiShieldCheck, HiHeart, HiBadgeCheck, HiLightBulb, HiStar, HiOfficeBuilding, HiPhone } from "react-icons/hi";
+import { HiTrendingUp, HiShieldCheck, HiHeart, HiBadgeCheck, HiLightBulb, HiStar, HiPhone } from "react-icons/hi";
 import { useLanguage } from "../contexts/LanguageContext";
-import { Link } from "react-router-dom";
-import { HiHome,  HiMail, HiLocationMarker, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { HiMail, HiLocationMarker} from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 const About = () => {
   const { language } = useLanguage();

@@ -3,6 +3,7 @@ import IlanListeGrid from '../components/RealEstateGrid';
 import { useLanguage } from "../contexts/LanguageContext";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { HiPhone, HiMail, HiLocationMarker } from "react-icons/hi";
+import.meta.env.VITE_API_URL
 
 interface Ilan {
   _id: string;
@@ -44,8 +45,8 @@ const ForRent = () => {
 
   useEffect(() => {
     const fetchKiralik = async () => {
-      try {
-        const res = await fetch('http://localhost:5000/api/ilanlar?tip=Kiralık');
+      try {             
+        const res = await fetch(`${import.meta.env.VITE_API_URL}api/ilanlar?tip=Kiralık`);
         if (!res.ok) {
           throw new Error('Veri alınırken hata oluştu');
         }

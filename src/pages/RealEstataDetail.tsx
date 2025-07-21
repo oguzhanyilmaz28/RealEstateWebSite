@@ -1,9 +1,9 @@
 import { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { HiHome,HiPhone,  HiMail, HiLocationMarker, HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import {HiPhone,  HiMail, HiLocationMarker } from "react-icons/hi";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-
+import.meta.env.VITE_API_URL
 interface Ilan {
   _id: string;
   link: string;
@@ -113,7 +113,7 @@ const IlanDetay = () => {
   useEffect(() => {
     const fetchIlan = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/ilanlar/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}api/ilanlar/${id}`);
         const data = await response.json();
         setIlan(data);
       } catch (error) {
