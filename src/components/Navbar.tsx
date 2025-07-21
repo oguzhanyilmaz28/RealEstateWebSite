@@ -2,13 +2,13 @@ import { Link, useLocation } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
 import { useState, useRef, useEffect } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import { useLanguage } from "../contexts/LanguageContext";
+//import { useLanguage } from "../contexts/LanguageContext";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   // const [langDropdownOpen, setLangDropdownOpen] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
+  //const { language, toggleLanguage } = useLanguage();
   // const langDropdownRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
@@ -29,25 +29,16 @@ const Navbar = () => {
     }
     // Ana sayfa değilse Link normal çalışacak
   };
-
-  const getPageLinks = () => {
-    return language === "tr"
-      ? [
-          { path: "/", label: "Ana Sayfa" },
-          { path: "/satilik", label: "Satılık" },
-          { path: "/kiralik", label: "Kiralık" },
-          { path: "/hakkimizda", label: "Hakkımızda" },
-          { path: "/iletisim", label: "İletişim" },
-        ]
-      : [
-          { path: "/", label: "Home" },
-          { path: "/for-sale", label: "For Sale" },
-          { path: "/for-rent", label: "For Rent" },
-          { path: "/about", label: "About" },
-          { path: "/contact", label: "Contact" },
-        ];
-  };
-
+const getPageLinks = () => {
+  // Default to Turkish links since language context is commented out
+  return [
+    { path: "/", label: "Ana Sayfa" },
+    { path: "/satilik", label: "Satılık" },
+    { path: "/kiralik", label: "Kiralık" },
+    { path: "/hakkimizda", label: "Hakkımızda" },
+    { path: "/iletisim", label: "İletişim" },
+  ];
+};
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       // if (langDropdownRef.current && !langDropdownRef.current.contains(event.target as Node)) {

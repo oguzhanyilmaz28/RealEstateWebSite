@@ -23,9 +23,7 @@ const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     "template_ubd860m",
     formRef.current,
     "eUqXfS1aGwJ5MlwWx"
-  ).then(
-    (res) => alert("Mesaj gönderildi."),
-    (err) => alert("Bir hata oluştu.")
+  ).then(() => {}
   );
 };
 
