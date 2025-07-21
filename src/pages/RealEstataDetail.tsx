@@ -113,7 +113,7 @@ const IlanDetay = () => {
   useEffect(() => {
     const fetchIlan = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/ilanlar?${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/ilanlar/${id}`);
         const data = await response.json();
         setIlan(data);
       } catch (error) {
