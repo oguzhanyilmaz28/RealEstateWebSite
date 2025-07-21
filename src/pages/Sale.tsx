@@ -68,7 +68,7 @@ const Sale = () => {
   useEffect(() => {
     const fetchSatilik = async () => {
       try {              
-        const res = await fetch(`${import.meta.env.VITE_API_URL}api/ilanlar?tip=Satılık`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/ilanlar?tip=Satılık`);
         if (!res.ok) {
           throw new Error(t.errorMessage);
         }

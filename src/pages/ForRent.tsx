@@ -46,7 +46,7 @@ const ForRent = () => {
   useEffect(() => {
     const fetchKiralik = async () => {
       try {             
-        const res = await fetch(`${import.meta.env.VITE_API_URL}api/ilanlar?tip=Kiralık`);
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/ilanlar?tip=Kiralık`);
         if (!res.ok) {
           throw new Error('Veri alınırken hata oluştu');
         }
