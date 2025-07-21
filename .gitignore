@@ -1,0 +1,12 @@
+# Genel
+node_modules
+dist
+.env
+
+# Vite + React
+.vite
+*.log
+
+# Backend
+backend/node_modules
+backend/.env

@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+body {
+    font-family: "Poppins", serif !important;
+}
+
+/* Scrollbar genişliğini web için artır, mobil için küçük tut */
+::-webkit-scrollbar {
+    width: 8px !important; /* Mobil için ince */
+}
+
+/* Desktop için daha kalın scrollbar */
+@media (min-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 16px !important; /* Web için daha kalın */
+    }
+}
+
+/* Light tema scrollbar track */
+::-webkit-scrollbar-track {
+    background: #f8fafc !important;
+    border-radius: 8px !important;
+    border: 1px solid #e2e8f0 !important;
+}
+
+/* Light tema scrollbar thumb */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #dc2626, #ea580c) !important;
+    border-radius: 8px !important;
+    border: 2px solid #f8fafc !important;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.1) !important;
+}
+
+/* Hover efekti */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #b91c1c, #c2410c) !important;
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+/* Dark tema için güçlü selectors */
+html.dark ::-webkit-scrollbar-track,
+.dark ::-webkit-scrollbar-track,
+html[class~="dark"] ::-webkit-scrollbar-track,
+body.dark ::-webkit-scrollbar-track {
+    background: #0f0f23 !important;
+    border: 1px solid #27272a !important;
+}
+
+html.dark ::-webkit-scrollbar-thumb,
+.dark ::-webkit-scrollbar-thumb,
+html[class~="dark"] ::-webkit-scrollbar-thumb,
+body.dark ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #dc2626, #ea580c) !important;
+    border: 2px solid #0f0f23 !important;
+    box-shadow: inset 0 0 3px rgba(255,255,255,0.1) !important;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover,
+.dark ::-webkit-scrollbar-thumb:hover,
+html[class~="dark"] ::-webkit-scrollbar-thumb:hover,
+body.dark ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #b91c1c, #c2410c) !important;
+}
+
+/* Firefox için scrollbar stilleri */
+html, body {
+    scrollbar-width: thin !important;
+    scrollbar-color: #dc2626 #f8fafc !important;
+}
+
+/* Firefox dark tema */
+html.dark html, 
+html.dark body,
+.dark html,
+.dark body,
+html[class~="dark"] html,
+html[class~="dark"] body,
+body.dark {
+    scrollbar-color: #dc2626 #0f0f23 !important;
+}
+
+/* Tüm elementler için scrollbar kalıtımı */
+* {
+    scrollbar-width: inherit !important;
+    scrollbar-color: inherit !important;
+}
+
+/* Dark tema'da body arka plan zorlaması */
+html.dark,
+.dark,
+html[class~="dark"],
+body.dark {
+    color-scheme: dark !important;
+}
+
+html.dark body,
+.dark body,
+html[class~="dark"] body,
+body.dark {
+    background: #0a0a0a !important;
+}
+
+/* Corner'lar için */
+::-webkit-scrollbar-corner {
+    background: transparent !important;
+}
+
+html.dark ::-webkit-scrollbar-corner,
+.dark ::-webkit-scrollbar-corner,
+html[class~="dark"] ::-webkit-scrollbar-corner,
+body.dark ::-webkit-scrollbar-corner {
+    background: #0f0f23 !important;
+}
